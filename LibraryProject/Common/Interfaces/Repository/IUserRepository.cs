@@ -10,7 +10,7 @@ namespace Common.Interfaces.Repository
     {
         bool AddUser(User user);
         bool DeleteUser(string jmbg);
-        List<User> SviClanovic();
+        List<User> GetAllUsers();
         List<User> SearchUser(string search_by, User user);
     }
 }
