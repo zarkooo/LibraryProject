@@ -10,7 +10,7 @@ namespace DataAccessLayer
 {
    public  class BaseConnection
     {
-        private static SqlCommand GetSqlCommand(string query)
+        public static SqlCommand GetSqlCommand(string query)
         {
             try
             {

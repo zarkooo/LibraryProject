@@ -8,6 +8,7 @@ namespace Common.Interfaces.Repository
 {
     public interface IBookRepository
     {
+       
         bool AddBook(Book book);
         bool UpdataBook(Book book);
         bool DeleteBook(int IdBook);
@@ -17,6 +18,7 @@ namespace Common.Interfaces.Repository
         List<Book> SearchBook(string search_by, Book book);
         bool SetQuantity(Book book);
         bool IncrementQuantity(Book book);
-
+        bool DecrementQuantity(Book book);
+        List<Tuple<List<Rented>, List<User>>> GetAllBookRentedUsers();
     }
 }
