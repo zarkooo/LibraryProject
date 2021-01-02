@@ -68,7 +68,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.74825F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -116,47 +116,57 @@
             // 
             // buttonUSER
             // 
-            this.buttonUSER.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUSER.Location = new System.Drawing.Point(3, 40);
+            this.buttonUSER.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUSER.BackgroundImage")));
+            this.buttonUSER.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonUSER.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonUSER.FlatAppearance.BorderSize = 0;
+            this.buttonUSER.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUSER.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonUSER.Location = new System.Drawing.Point(3, 3);
             this.buttonUSER.Name = "buttonUSER";
-            this.buttonUSER.Size = new System.Drawing.Size(118, 23);
+            this.buttonUSER.Size = new System.Drawing.Size(118, 98);
             this.buttonUSER.TabIndex = 0;
-            this.buttonUSER.Text = "USER";
             this.buttonUSER.UseVisualStyleBackColor = true;
             this.buttonUSER.Click += new System.EventHandler(this.buttonUSER_Click);
             // 
             // buttonBooks
             // 
-            this.buttonBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBooks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonBooks.FlatAppearance.BorderSize = 0;
             this.buttonBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBooks.Image = ((System.Drawing.Image)(resources.GetObject("buttonBooks.Image")));
-            this.buttonBooks.Location = new System.Drawing.Point(3, 116);
+            this.buttonBooks.Location = new System.Drawing.Point(3, 107);
             this.buttonBooks.Name = "buttonBooks";
-            this.buttonBooks.Size = new System.Drawing.Size(118, 79);
+            this.buttonBooks.Size = new System.Drawing.Size(118, 98);
             this.buttonBooks.TabIndex = 1;
             this.buttonBooks.UseVisualStyleBackColor = true;
             this.buttonBooks.Click += new System.EventHandler(this.buttonBooks_Click);
             // 
             // buttonRented
             // 
-            this.buttonRented.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRented.Location = new System.Drawing.Point(3, 248);
+            this.buttonRented.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRented.BackgroundImage")));
+            this.buttonRented.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonRented.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonRented.FlatAppearance.BorderSize = 0;
+            this.buttonRented.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRented.Location = new System.Drawing.Point(3, 211);
             this.buttonRented.Name = "buttonRented";
-            this.buttonRented.Size = new System.Drawing.Size(118, 23);
+            this.buttonRented.Size = new System.Drawing.Size(118, 98);
             this.buttonRented.TabIndex = 2;
-            this.buttonRented.Text = "RENTED";
             this.buttonRented.UseVisualStyleBackColor = true;
             this.buttonRented.Click += new System.EventHandler(this.buttonRented_Click);
             // 
             // buttonReturnBook
             // 
-            this.buttonReturnBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonReturnBook.Location = new System.Drawing.Point(3, 352);
+            this.buttonReturnBook.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonReturnBook.BackgroundImage")));
+            this.buttonReturnBook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonReturnBook.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonReturnBook.FlatAppearance.BorderSize = 0;
+            this.buttonReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReturnBook.Location = new System.Drawing.Point(3, 315);
             this.buttonReturnBook.Name = "buttonReturnBook";
-            this.buttonReturnBook.Size = new System.Drawing.Size(118, 23);
+            this.buttonReturnBook.Size = new System.Drawing.Size(118, 98);
             this.buttonReturnBook.TabIndex = 3;
-            this.buttonReturnBook.Text = "RETURN BOOK";
             this.buttonReturnBook.UseVisualStyleBackColor = true;
             this.buttonReturnBook.Click += new System.EventHandler(this.buttonReturnBook_Click);
             // 
