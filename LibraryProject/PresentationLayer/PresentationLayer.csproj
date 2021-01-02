@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonForms\Form1.cs">
+    <Compile Include="CommonForms\Library.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommonForms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CommonForms\Library.Designer.cs">
+      <DependentUpon>Library.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +66,20 @@
     <Compile Include="UserControls\Books.Designer.cs">
       <DependentUpon>Books.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CommonForms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UserControls\Rented.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Rented.Designer.cs">
+      <DependentUpon>Rented.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReturnBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReturnBook.Designer.cs">
+      <DependentUpon>ReturnBook.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CommonForms\Library.resx">
+      <DependentUpon>Library.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Books.resx">
       <DependentUpon>Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Rented.resx">
+      <DependentUpon>Rented.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ReturnBook.resx">
+      <DependentUpon>ReturnBook.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -107,6 +125,8 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

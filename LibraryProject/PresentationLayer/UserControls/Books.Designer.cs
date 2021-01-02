@@ -102,10 +102,10 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.484305F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.51569F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.labelTitle, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.labelIsbn, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.labelAuthorName, 1, 3);
@@ -122,15 +122,15 @@
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 9;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.75F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13586F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13586F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13586F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13586F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13586F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13586F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.28842F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.76058F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13586F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(263, 398);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
@@ -138,7 +138,7 @@
             // 
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(78, 59);
+            this.labelTitle.Location = new System.Drawing.Point(71, 59);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(30, 13);
             this.labelTitle.TabIndex = 0;
@@ -148,7 +148,7 @@
             // 
             this.labelIsbn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelIsbn.AutoSize = true;
-            this.labelIsbn.Location = new System.Drawing.Point(73, 103);
+            this.labelIsbn.Location = new System.Drawing.Point(66, 103);
             this.labelIsbn.Name = "labelIsbn";
             this.labelIsbn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelIsbn.Size = new System.Drawing.Size(35, 13);
@@ -159,7 +159,7 @@
             // 
             this.labelAuthorName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelAuthorName.AutoSize = true;
-            this.labelAuthorName.Location = new System.Drawing.Point(38, 147);
+            this.labelAuthorName.Location = new System.Drawing.Point(31, 147);
             this.labelAuthorName.Name = "labelAuthorName";
             this.labelAuthorName.Size = new System.Drawing.Size(70, 13);
             this.labelAuthorName.TabIndex = 2;
@@ -169,9 +169,9 @@
             // 
             this.labelYearOfIssue.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelYearOfIssue.AutoSize = true;
-            this.labelYearOfIssue.Location = new System.Drawing.Point(34, 191);
+            this.labelYearOfIssue.Location = new System.Drawing.Point(55, 185);
             this.labelYearOfIssue.Name = "labelYearOfIssue";
-            this.labelYearOfIssue.Size = new System.Drawing.Size(74, 13);
+            this.labelYearOfIssue.Size = new System.Drawing.Size(46, 26);
             this.labelYearOfIssue.TabIndex = 3;
             this.labelYearOfIssue.Text = "Year Of Issue:";
             // 
@@ -179,7 +179,7 @@
             // 
             this.labelQuantity.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelQuantity.AutoSize = true;
-            this.labelQuantity.Location = new System.Drawing.Point(59, 235);
+            this.labelQuantity.Location = new System.Drawing.Point(52, 235);
             this.labelQuantity.Name = "labelQuantity";
             this.labelQuantity.Size = new System.Drawing.Size(49, 13);
             this.labelQuantity.TabIndex = 4;
@@ -188,41 +188,41 @@
             // textBoxTitle
             // 
             this.textBoxTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTitle.Location = new System.Drawing.Point(114, 56);
+            this.textBoxTitle.Location = new System.Drawing.Point(107, 56);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(123, 20);
+            this.textBoxTitle.Size = new System.Drawing.Size(99, 20);
             this.textBoxTitle.TabIndex = 5;
             // 
             // textBoxISBN
             // 
             this.textBoxISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxISBN.Location = new System.Drawing.Point(114, 100);
+            this.textBoxISBN.Location = new System.Drawing.Point(107, 100);
             this.textBoxISBN.Name = "textBoxISBN";
-            this.textBoxISBN.Size = new System.Drawing.Size(123, 20);
+            this.textBoxISBN.Size = new System.Drawing.Size(99, 20);
             this.textBoxISBN.TabIndex = 6;
             // 
             // textBoxAuthorName
             // 
             this.textBoxAuthorName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAuthorName.Location = new System.Drawing.Point(114, 144);
+            this.textBoxAuthorName.Location = new System.Drawing.Point(107, 144);
             this.textBoxAuthorName.Name = "textBoxAuthorName";
-            this.textBoxAuthorName.Size = new System.Drawing.Size(123, 20);
+            this.textBoxAuthorName.Size = new System.Drawing.Size(99, 20);
             this.textBoxAuthorName.TabIndex = 7;
             // 
             // textBoxYearOfIssue
             // 
             this.textBoxYearOfIssue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxYearOfIssue.Location = new System.Drawing.Point(114, 188);
+            this.textBoxYearOfIssue.Location = new System.Drawing.Point(107, 188);
             this.textBoxYearOfIssue.Name = "textBoxYearOfIssue";
-            this.textBoxYearOfIssue.Size = new System.Drawing.Size(123, 20);
+            this.textBoxYearOfIssue.Size = new System.Drawing.Size(99, 20);
             this.textBoxYearOfIssue.TabIndex = 8;
             // 
             // textBoxQuantity
             // 
             this.textBoxQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxQuantity.Location = new System.Drawing.Point(114, 232);
+            this.textBoxQuantity.Location = new System.Drawing.Point(107, 232);
             this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(123, 20);
+            this.textBoxQuantity.Size = new System.Drawing.Size(99, 20);
             this.textBoxQuantity.TabIndex = 9;
             // 
             // tableLayoutPanel5
@@ -231,20 +231,20 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.buttonDeleteBooks, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(8, 267);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(29, 267);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(100, 62);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(72, 62);
             this.tableLayoutPanel5.TabIndex = 10;
             // 
             // buttonDeleteBooks
             // 
             this.buttonDeleteBooks.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonDeleteBooks.Location = new System.Drawing.Point(22, 4);
+            this.buttonDeleteBooks.Location = new System.Drawing.Point(3, 4);
             this.buttonDeleteBooks.Name = "buttonDeleteBooks";
-            this.buttonDeleteBooks.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteBooks.Size = new System.Drawing.Size(66, 23);
             this.buttonDeleteBooks.TabIndex = 0;
             this.buttonDeleteBooks.Text = "Delete";
             this.buttonDeleteBooks.UseVisualStyleBackColor = true;
@@ -256,18 +256,18 @@
             this.tableLayoutPanel6.Controls.Add(this.buttonAddBooks, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.buttonUpdateBooks, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(114, 267);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(107, 267);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(123, 62);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(99, 62);
             this.tableLayoutPanel6.TabIndex = 11;
             // 
             // buttonAddBooks
             // 
             this.buttonAddBooks.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonAddBooks.Location = new System.Drawing.Point(45, 4);
+            this.buttonAddBooks.Location = new System.Drawing.Point(21, 4);
             this.buttonAddBooks.Name = "buttonAddBooks";
             this.buttonAddBooks.Size = new System.Drawing.Size(75, 23);
             this.buttonAddBooks.TabIndex = 0;
@@ -277,7 +277,7 @@
             // buttonUpdateBooks
             // 
             this.buttonUpdateBooks.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonUpdateBooks.Location = new System.Drawing.Point(45, 35);
+            this.buttonUpdateBooks.Location = new System.Drawing.Point(21, 35);
             this.buttonUpdateBooks.Name = "buttonUpdateBooks";
             this.buttonUpdateBooks.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateBooks.TabIndex = 1;

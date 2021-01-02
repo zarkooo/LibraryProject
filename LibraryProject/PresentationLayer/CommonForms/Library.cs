@@ -57,5 +57,21 @@ namespace PresentationLayer
             panel2Right.Controls.Clear();
             panel2Right.Controls.Add(books);
         }
+
+        private void buttonRented_Click(object sender, EventArgs e)
+        {
+            Rented rented = new Rented();
+            rented.Dock = DockStyle.Fill;
+            panel2Right.Controls.Clear();
+            panel2Right.Controls.Add(rented);
+        }
+
+        private void buttonReturnBook_Click(object sender, EventArgs e)
+        {
+            ReturnBook returnBook = new ReturnBook();
+            returnBook.Dock = DockStyle.Fill;
+            panel2Right.Controls.Clear();
+            panel2Right.Controls.Add(returnBook);
+        }
     }
 }
