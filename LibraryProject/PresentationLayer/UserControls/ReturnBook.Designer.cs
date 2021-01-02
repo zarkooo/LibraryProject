@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(787, 401);
+            this.panel1.Size = new System.Drawing.Size(785, 399);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.583692F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.25321F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.16309F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(787, 401);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 399);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -87,7 +87,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(781, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(779, 302);
             this.dataGridView1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -112,19 +112,19 @@
             this.tableLayoutPanel2.Controls.Add(this.textBoxReturnBookSurname, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxReturnBookTitle, 7, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonReturnBook, 8, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 346);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 345);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(781, 52);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(779, 51);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 13);
+            this.label1.Location = new System.Drawing.Point(44, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 0;
@@ -134,7 +134,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(217, 13);
+            this.label2.Location = new System.Drawing.Point(217, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -144,7 +144,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(375, 13);
+            this.label3.Location = new System.Drawing.Point(375, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
@@ -154,7 +154,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(545, 13);
+            this.label4.Location = new System.Drawing.Point(545, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 3;
@@ -195,7 +195,7 @@
             // buttonReturnBook
             // 
             this.buttonReturnBook.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonReturnBook.Location = new System.Drawing.Point(703, 8);
+            this.buttonReturnBook.Location = new System.Drawing.Point(701, 7);
             this.buttonReturnBook.Name = "buttonReturnBook";
             this.buttonReturnBook.Size = new System.Drawing.Size(75, 23);
             this.buttonReturnBook.TabIndex = 8;
@@ -217,7 +217,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(781, 28);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(779, 28);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // comboBoxReturnBookSortBy
@@ -226,14 +226,14 @@
             this.comboBoxReturnBookSortBy.FormattingEnabled = true;
             this.comboBoxReturnBookSortBy.Location = new System.Drawing.Point(3, 3);
             this.comboBoxReturnBookSortBy.Name = "comboBoxReturnBookSortBy";
-            this.comboBoxReturnBookSortBy.Size = new System.Drawing.Size(111, 21);
+            this.comboBoxReturnBookSortBy.Size = new System.Drawing.Size(110, 21);
             this.comboBoxReturnBookSortBy.TabIndex = 0;
             // 
             // labelSearchReturn
             // 
             this.labelSearchReturn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelSearchReturn.AutoSize = true;
-            this.labelSearchReturn.Location = new System.Drawing.Point(538, 7);
+            this.labelSearchReturn.Location = new System.Drawing.Point(535, 7);
             this.labelSearchReturn.Name = "labelSearchReturn";
             this.labelSearchReturn.Size = new System.Drawing.Size(44, 13);
             this.labelSearchReturn.TabIndex = 1;
@@ -242,18 +242,20 @@
             // textBoxReturnBookSearch
             // 
             this.textBoxReturnBookSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxReturnBookSearch.Location = new System.Drawing.Point(588, 4);
+            this.textBoxReturnBookSearch.Location = new System.Drawing.Point(585, 4);
             this.textBoxReturnBookSearch.Name = "textBoxReturnBookSearch";
-            this.textBoxReturnBookSearch.Size = new System.Drawing.Size(190, 20);
+            this.textBoxReturnBookSearch.Size = new System.Drawing.Size(191, 20);
             this.textBoxReturnBookSearch.TabIndex = 2;
             // 
             // ReturnBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.panel1);
             this.Name = "ReturnBook";
-            this.Size = new System.Drawing.Size(787, 401);
+            this.Size = new System.Drawing.Size(785, 399);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

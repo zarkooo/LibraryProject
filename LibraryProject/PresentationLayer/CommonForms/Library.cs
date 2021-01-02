@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer
 {
-    public partial class Form1 : Form
+    public partial class Library : Form
     {
-        public Form1()
+        public Library()
         {
             this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
