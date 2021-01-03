@@ -16,7 +16,7 @@ namespace PresentationLayer.CommonForms
     public partial class Member : Form
     {
         enum Search { TITLE, AUTHOR }
-        public Member()
+        public Member(string NameUser)
         {
             InitializeComponent();
 
@@ -30,7 +30,7 @@ namespace PresentationLayer.CommonForms
                 s = "Good afternoon";
             else
                 s = "Good evening";
-            labelUserNames.Text = s;
+            labelUserNames.Text = s+"," +NameUser;
 
 
             dataGridViewBook.AutoGenerateColumns = false;

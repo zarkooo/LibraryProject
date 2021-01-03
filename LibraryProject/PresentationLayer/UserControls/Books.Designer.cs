@@ -48,7 +48,7 @@
             this.buttonUpdateBooks = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBook = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelSearchBooks = new System.Windows.Forms.TableLayoutPanel();
@@ -66,7 +66,7 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).BeginInit();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanelSearchBooks.SuspendLayout();
@@ -248,6 +248,7 @@
             this.buttonDeleteBooks.TabIndex = 0;
             this.buttonDeleteBooks.Text = "Delete";
             this.buttonDeleteBooks.UseVisualStyleBackColor = true;
+            this.buttonDeleteBooks.Click += new System.EventHandler(this.buttonDeleteBooks_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -273,6 +274,7 @@
             this.buttonAddBooks.TabIndex = 0;
             this.buttonAddBooks.Text = "Add";
             this.buttonAddBooks.UseVisualStyleBackColor = true;
+            this.buttonAddBooks.Click += new System.EventHandler(this.buttonAddBooks_Click);
             // 
             // buttonUpdateBooks
             // 
@@ -283,6 +285,7 @@
             this.buttonUpdateBooks.TabIndex = 1;
             this.buttonUpdateBooks.Text = "Update";
             this.buttonUpdateBooks.UseVisualStyleBackColor = true;
+            this.buttonUpdateBooks.Click += new System.EventHandler(this.buttonUpdateBooks_Click);
             // 
             // panel2
             // 
@@ -297,7 +300,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridViewBook, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -308,17 +311,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(503, 398);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewBook
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(497, 342);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewBook.AllowUserToAddRows = false;
+            this.dataGridViewBook.AllowUserToDeleteRows = false;
+            this.dataGridViewBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBook.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewBook.Location = new System.Drawing.Point(3, 53);
+            this.dataGridViewBook.Name = "dataGridViewBook";
+            this.dataGridViewBook.ReadOnly = true;
+            this.dataGridViewBook.Size = new System.Drawing.Size(497, 342);
+            this.dataGridViewBook.TabIndex = 0;
+            this.dataGridViewBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBook_CellClick);
             // 
             // panel3
             // 
@@ -376,6 +380,7 @@
             this.textBoxSearchBooks.Name = "textBoxSearchBooks";
             this.textBoxSearchBooks.Size = new System.Drawing.Size(264, 20);
             this.textBoxSearchBooks.TabIndex = 1;
+            this.textBoxSearchBooks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearchBooks_KeyDown);
             // 
             // tableLayoutPanel3
             // 
@@ -420,7 +425,7 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanelSearchBooks.ResumeLayout(false);
@@ -436,7 +441,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewBook;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSearchBooks;

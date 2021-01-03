@@ -115,6 +115,7 @@
             this.dataGridViewUser.ReadOnly = true;
             this.dataGridViewUser.Size = new System.Drawing.Size(370, 322);
             this.dataGridViewUser.TabIndex = 0;
+            this.dataGridViewUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellClick);
             // 
             // tableLayoutPanel1
             // 
@@ -228,6 +229,7 @@
             this.textBoxUserSearch.Name = "textBoxUserSearch";
             this.textBoxUserSearch.Size = new System.Drawing.Size(179, 20);
             this.textBoxUserSearch.TabIndex = 1;
+            this.textBoxUserSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUserSearch_KeyDown);
             // 
             // label1
             // 
@@ -267,6 +269,7 @@
             this.dataGridViewBooks.ReadOnly = true;
             this.dataGridViewBooks.Size = new System.Drawing.Size(383, 322);
             this.dataGridViewBooks.TabIndex = 0;
+            this.dataGridViewBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBooks_CellClick);
             // 
             // tableLayoutPanel3
             // 
@@ -359,6 +362,7 @@
             this.buttonIssue.TabIndex = 6;
             this.buttonIssue.Text = "Issue";
             this.buttonIssue.UseVisualStyleBackColor = true;
+            this.buttonIssue.Click += new System.EventHandler(this.buttonIssue_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -402,6 +406,7 @@
             this.textBoxBooksSearch.Name = "textBoxBooksSearch";
             this.textBoxBooksSearch.Size = new System.Drawing.Size(187, 20);
             this.textBoxBooksSearch.TabIndex = 0;
+            this.textBoxBooksSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxBooksSearch_KeyDown);
             // 
             // Rented
             // 
