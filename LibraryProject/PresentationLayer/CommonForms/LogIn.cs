@@ -21,14 +21,20 @@ namespace PresentationLayer.CommonForms
         {
             if (textBoxLogInPassword.Text == "1")
             {
-                Member member = new Member();
+                Member member = new Member("Jack");
+                
                 member.ShowDialog();
+                
             }
             else
             {
                 Library library = new Library();
+                
                 library.ShowDialog();
+                
             }
         }
+
+      
     }
 }

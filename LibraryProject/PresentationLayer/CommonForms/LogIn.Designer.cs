@@ -127,6 +127,7 @@
             // 
             this.textBoxLogInJmbg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLogInJmbg.Location = new System.Drawing.Point(76, 129);
+            this.textBoxLogInJmbg.MaxLength = 13;
             this.textBoxLogInJmbg.Name = "textBoxLogInJmbg";
             this.textBoxLogInJmbg.Size = new System.Drawing.Size(171, 20);
             this.textBoxLogInJmbg.TabIndex = 2;
@@ -135,9 +136,13 @@
             // 
             this.textBoxLogInPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLogInPassword.Location = new System.Drawing.Point(76, 176);
+            this.textBoxLogInPassword.MaxLength = 5;
             this.textBoxLogInPassword.Name = "textBoxLogInPassword";
+            this.textBoxLogInPassword.PasswordChar = '*';
             this.textBoxLogInPassword.Size = new System.Drawing.Size(171, 20);
             this.textBoxLogInPassword.TabIndex = 3;
+//            this.textBoxLogInPassword.Enter += new System.EventHandler(this.textBoxLogInPassword_Enter);
+//            this.textBoxLogInPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLogInPassword_KeyPress);
             // 
             // buttonLogIn
             // 
