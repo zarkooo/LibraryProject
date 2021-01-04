@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,6 +61,7 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -80,6 +82,7 @@
             this.panel4.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -209,6 +212,7 @@
             // 
             this.textBoxUserJmbg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUserJmbg.Location = new System.Drawing.Point(121, 54);
+            this.textBoxUserJmbg.MaxLength = 13;
             this.textBoxUserJmbg.Name = "textBoxUserJmbg";
             this.textBoxUserJmbg.Size = new System.Drawing.Size(113, 20);
             this.textBoxUserJmbg.TabIndex = 6;
@@ -241,7 +245,9 @@
             // 
             this.textBoxUserPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUserPassword.Location = new System.Drawing.Point(121, 226);
+            this.textBoxUserPassword.MaxLength = 5;
             this.textBoxUserPassword.Name = "textBoxUserPassword";
+            this.textBoxUserPassword.PasswordChar = '*';
             this.textBoxUserPassword.Size = new System.Drawing.Size(113, 20);
             this.textBoxUserPassword.TabIndex = 10;
             // 
@@ -452,6 +458,10 @@
             this.dataGridViewUser.TabIndex = 1;
             this.dataGridViewUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellClick);
             // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,6 +493,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -521,5 +532,6 @@
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

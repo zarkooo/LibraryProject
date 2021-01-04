@@ -60,7 +60,7 @@ namespace PresentationLayer
 
         private void buttonRented_Click(object sender, EventArgs e)
         {
-            Rented rented = new Rented();
+            Retnt rented = new Retnt();
             rented.Dock = DockStyle.Fill;
             panel2Right.Controls.Clear();
             panel2Right.Controls.Add(rented);

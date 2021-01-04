@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -39,11 +40,13 @@
             this.textBoxLogInPassword = new System.Windows.Forms.TextBox();
             this.buttonLogIn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -141,8 +144,6 @@
             this.textBoxLogInPassword.PasswordChar = '*';
             this.textBoxLogInPassword.Size = new System.Drawing.Size(171, 20);
             this.textBoxLogInPassword.TabIndex = 3;
-//            this.textBoxLogInPassword.Enter += new System.EventHandler(this.textBoxLogInPassword_Enter);
-//            this.textBoxLogInPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLogInPassword_KeyPress);
             // 
             // buttonLogIn
             // 
@@ -166,6 +167,10 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +188,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,5 +205,6 @@
         private System.Windows.Forms.TextBox textBoxLogInPassword;
         private System.Windows.Forms.Button buttonLogIn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

@@ -20,6 +20,49 @@ namespace PresentationLayer.UserControls
             comboBoxSortByBooks.DataSource = Enum.GetValues(typeof(Search));
         }
 
+        private bool ErrorValidation()
+        {
+            
+            if (textBoxTitle.Text == "")
+            {
+                error.SetError(textBoxTitle, "Required field");
+                return false;
+            }
+            else if (textBoxISBN.Text == "")
+            {
+                error.SetError(textBoxISBN, "Required field");
+                return false;
+            }
+            else if (textBoxAuthorName.Text == "")
+            {
+                error.SetError(textBoxAuthorName, "Required field");
+                return false;
+            }
+            else if (!int.TryParse(textBoxYearOfIssue.Text, out int r))
+            {
+                error.SetError(textBoxYearOfIssue, "Enter a numeric value");
+                return false;
+            }
+            else if (textBoxYearOfIssue.Text == "")
+            {
+                error.SetError(textBoxYearOfIssue, "Required field");
+                return false;
+            }
+            else if (!int.TryParse(textBoxQuantity.Text, out int r2))
+            {
+                error.SetError(textBoxQuantity, "Enter a numeric value");
+                return false;
+            }
+            else if (textBoxQuantity.Text == "")
+            {
+                error.SetError(textBoxQuantity, "Required field");
+                return false;
+            }
+
+            error.Clear();
+            return true;
+        }
+
         private Book ValidationBook
         {
             get
@@ -41,7 +84,10 @@ namespace PresentationLayer.UserControls
 
         private void buttonAddBooks_Click(object sender, EventArgs e)
         {
+            if (ErrorValidation())
+            {
 
+            }
         }
 
         private void buttonUpdateBooks_Click(object sender, EventArgs e)

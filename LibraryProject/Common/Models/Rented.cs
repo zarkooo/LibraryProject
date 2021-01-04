@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common.Models
 {
-   public  class Rented:Book
+   public class Rented:Book
     {
         public int IdRented { get; set; }
 

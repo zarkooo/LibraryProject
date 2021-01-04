@@ -33,8 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,11 +93,11 @@
     <Compile Include="UserControls\Books.Designer.cs">
       <DependentUpon>Books.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Rented.cs">
+    <Compile Include="UserControls\Retnt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Rented.Designer.cs">
-      <DependentUpon>Rented.cs</DependentUpon>
+    <Compile Include="UserControls\Retnt.Designer.cs">
+      <DependentUpon>Retnt.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ReturnBook.cs">
       <SubType>UserControl</SubType>
@@ -114,12 +129,13 @@
     <EmbeddedResource Include="UserControls\Books.resx">
       <DependentUpon>Books.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Rented.resx">
-      <DependentUpon>Rented.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Retnt.resx">
+      <DependentUpon>Retnt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ReturnBook.resx">
       <DependentUpon>ReturnBook.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +157,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{fd21d5a9-4d64-4573-a3a2-27719b4d1026}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{CB2F39AE-26D7-43A5-9024-34C41A3CC586}</Project>
+      <Name>DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

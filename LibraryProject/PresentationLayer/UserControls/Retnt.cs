@@ -11,15 +11,16 @@ using Common.Models;
 
 namespace PresentationLayer.UserControls
 {
-    public partial class Rented : UserControl
+    public partial class Retnt : UserControl
     {
         enum Search { TITLE, AUTHOR }
 
-        public Rented()
+        public Retnt()
         {
             InitializeComponent();
             comboBoxUserBy.DataSource = Enum.GetValues(typeof(Role));
             comboBoxBooksBy.DataSource = Enum.GetValues(typeof(Search));
+            buttonIssue.Visible = false;
         }
 
         private void textBoxUserSearch_KeyDown(object sender, KeyEventArgs e)
@@ -59,11 +60,16 @@ namespace PresentationLayer.UserControls
 
             string Jmbg = dataGridViewUser[0, row1].Value.ToString();
 
-            Book book = new Book();
-            book.IdBook = int.Parse(dataGridViewBooks[0, row2].Value.ToString());
+            Rented rented = new Rented();
+            rented.IdBook = int.Parse(dataGridViewBooks[0, row2].Value.ToString());
 
+            rented.DateOfIssue = DateTime.Parse(dateTimePickerDateOfIssue.Value.ToString());
 
-            Rented r = new Rented();
+            rented.ReturnDate = DateTime.Parse(dateTimePickerReturnBooks.Value.ToString());
+
+            buttonIssue.Visible = true;
+            
+            //Pozvati metodu iz biznis sloja za izdavanje
             
 
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,6 +57,7 @@
             this.textBoxSearchBooks = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxSortByBooks = new System.Windows.Forms.ComboBox();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,6 +73,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanelSearchBooks.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -405,6 +408,10 @@
             this.comboBoxSortByBooks.Size = new System.Drawing.Size(139, 21);
             this.comboBoxSortByBooks.TabIndex = 0;
             // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +438,7 @@
             this.tableLayoutPanelSearchBooks.ResumeLayout(false);
             this.tableLayoutPanelSearchBooks.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,5 +473,6 @@
         private System.Windows.Forms.Button buttonUpdateBooks;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ComboBox comboBoxSortByBooks;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

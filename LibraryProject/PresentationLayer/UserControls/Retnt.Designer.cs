@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.UserControls
 {
-    partial class Rented
+    partial class Retnt
     {
         /// <summary> 
         /// Required designer variable.
@@ -408,14 +408,14 @@
             this.textBoxBooksSearch.TabIndex = 0;
             this.textBoxBooksSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxBooksSearch_KeyDown);
             // 
-            // Rented
+            // Retnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Rented";
+            this.Name = "Retnt";
             this.Size = new System.Drawing.Size(769, 400);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
