@@ -23,7 +23,12 @@ namespace DataAccessLayer
             string query = "DELETE FROM Users WHERE JMBGUser='" + jmbg + "'";
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
-
+        public bool UpdataUser(User user)
+        {
+            string query = string.Format("UPDATA Users SET  Name='{0}', Surname='{1}', Email='{2}', Password='{3}', Role='{4}' WHERE JMBGUser='{5}'",
+                user.Name, user.Surname, user.Email, user.Password, user.Role, user.JmbgUser);
+            return BaseConnection.ExecuteNonQuerySqlCommand(query);
+        }
         public List<User> GetAllUsers()
         {
             return GetAllUsersInternal("SELECT * FROM Users");
