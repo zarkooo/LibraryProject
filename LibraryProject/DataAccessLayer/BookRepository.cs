@@ -16,10 +16,6 @@ namespace DataAccessLayer
             string query = string.Format("INSERT INTO Books VALUES('{0}','{1}','{2}','{3}','{4}')",
                book.Title, book.ISBN, book.NameAuthor, book.YearOfIssue, book.Quantity);
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
-
-            /*TO BE DONE: On the business logic layer it is necessary to 
-             * examine whether there is the same book in the database (in GetAllList()) 
-             * if there is a call to the SetQuantity method otherwise Add book*/
         }
 
         public bool DeleteBook(int IdBook)
@@ -34,7 +30,6 @@ namespace DataAccessLayer
         }
         private int Quantity(Book book)
         {
-          //DONE:created  method that returns the quantity from the database based on the forwarded book
 
             string q = string.Format("SELECT Quantity FROM Books WHERE Title='{0}' AND NameAuthor='{1}'",
                 book.Title, book.NameAuthor);
@@ -44,7 +39,7 @@ namespace DataAccessLayer
         }
         public bool IncrementQuantity(Book book)
         {
-            //DONE:created  method that increases the amount of books in database based on the forwarded book
+          
             int quantity = Quantity(book) + 1;
             string query = string.Format("UPDATE Books SET Quantity = '{0}'" +
          " where Title = '{1}' AND NameAuthor='{2}'", quantity, book.Title, book.NameAuthor);
@@ -53,36 +48,25 @@ namespace DataAccessLayer
 
         public bool RentedBook(string JmbgUser, Rented rented)
         {
-           
-            
             if (Quantity(rented) > 0)
-            { 
-              string query = string.Format("INSERT INTO Rented VALUES('{0}',{1},'{2:u}','{3:u}')",
-              JmbgUser, rented.IdBook, rented.DateOfIssue, rented.ReturnDate);
-               return BaseConnection.ExecuteNonQuerySqlCommand(query);
+            {
+                string query = string.Format("INSERT INTO Rented VALUES('{0}',{1},'{2:u}','{3:u}')",
+                JmbgUser, rented.IdBook, rented.DateOfIssue, rented.ReturnDate);
+                return BaseConnection.ExecuteNonQuerySqlCommand(query);
             }
-
-
-            /*TO BE DONE: On the business logic layer, you need to call the RentedBook method, 
-             * if it returns true, call the method DecrementQuantity*/
             return false;
         }
 
         public bool ReturnBook(string JmbgUser, Book book)
         {
-            
             string query = "DELETE from Rented where IdBook='" + book.IdBook + "'and JMBGUser='" + JmbgUser + "'";
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
-
-            /*TO BE DONE: Оn the business logic layer it is necessary to call the ReturnBook method,
-            if it returns true,  call method  IncrementQuentity  to increase quantity*/
-
 
         }
 
         public List<Book> SearchBook(string search_by, Book book)
         {
-            //DONE: created method for search book real time 
+           
             string query = "";
             switch (search_by)
             {

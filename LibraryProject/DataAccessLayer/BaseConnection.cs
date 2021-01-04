@@ -10,11 +10,12 @@ namespace DataAccessLayer
 {
    public  class BaseConnection
     {
+        private static SqlConnection sqlConnection = null;
         public static SqlCommand GetSqlCommand(string query)
         {
             try
             {
-                SqlConnection sqlConnection = new SqlConnection(ConnectionBase.ConnectionString);
+                sqlConnection = new SqlConnection(ConnectionBase.ConnectionString);
                 sqlConnection.Open();
                 return new SqlCommand(query, sqlConnection);
             }
@@ -28,7 +29,9 @@ namespace DataAccessLayer
             try
             {
                 SqlCommand sqlCommand = GetSqlCommand(query);
-                return sqlCommand.ExecuteNonQuery() > 0;
+                int res = sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+                return res > 0;
             }
             catch
             {
@@ -40,7 +43,9 @@ namespace DataAccessLayer
             try
             {
                 SqlCommand sqlCommand = GetSqlCommand(query);
-                return sqlCommand.ExecuteScalar();
+                object o= sqlCommand.ExecuteScalar();
+                sqlConnection.Close();
+                return o;
             }
             catch
             {
