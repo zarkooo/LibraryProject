@@ -19,7 +19,7 @@ namespace PresentationLayer.CommonForms
         public Member(string NameUser)
         {
             InitializeComponent();
-
+            this.WindowState = FormWindowState.Maximized;
             comboBoxBookSearchBy.DataSource = Enum.GetValues(typeof(Search));
 
             string s = "";

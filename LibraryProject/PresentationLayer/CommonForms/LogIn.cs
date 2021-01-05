@@ -19,6 +19,10 @@ namespace PresentationLayer.CommonForms
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
+            if (ErrorValidation())
+            {
+
+
             if (textBoxLogInPassword.Text == "1")
             {
                 Member member = new Member("Jack");
@@ -33,8 +37,32 @@ namespace PresentationLayer.CommonForms
                 library.ShowDialog();
                 
             }
+
+            }
         }
 
-      
+        private bool ErrorValidation()
+        {
+            if (!long.TryParse(textBoxLogInJmbg.Text, out long r))
+            {
+                error.SetError(textBoxLogInJmbg, "Enter a numeric value");
+                return false;
+            }
+            else if (textBoxLogInJmbg.Text == "")
+            {
+                error.SetError(textBoxLogInJmbg, "Required field");
+                return false;
+            }
+            else if (textBoxLogInPassword.Text == "")
+            {
+                error.SetError(textBoxLogInPassword, "Required field");
+                return false;
+            }
+
+            error.Clear();
+            return true;
+        }
+
+
     }
 }

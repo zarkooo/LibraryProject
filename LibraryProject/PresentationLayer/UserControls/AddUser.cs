@@ -20,6 +20,7 @@ namespace PresentationLayer.UserControls
         {
             InitializeComponent();
             comboBoxSortBy.DataSource = Enum.GetValues(typeof(Role));
+            comboBoxRole.DataSource = Enum.GetValues(typeof(Role));
         }
 
         private User ValidationUser
@@ -46,7 +47,7 @@ namespace PresentationLayer.UserControls
             }
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
+        private void buttonUpdate_Click(object sender, EventArgs e) 
         {
             User user = new User();
 
@@ -57,11 +58,11 @@ namespace PresentationLayer.UserControls
             user.Email = dataGridViewUser[3, row].Value.ToString();
             user.Password = dataGridViewUser[4, row].Value.ToString();
 
-            textBoxUserJmbg.Text = user.JmbgUser;
+          /*  textBoxUserJmbg.Text = user.JmbgUser;
             textBoxUserName.Text = user.Name;
             textBoxUserSurName.Text = user.Surname;
             textBoxUserEmail.Text = user.Email;
-            textBoxUserPassword.Text = user.Password;
+            textBoxUserPassword.Text = user.Password; */
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -78,7 +79,10 @@ namespace PresentationLayer.UserControls
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            if (ErrorValidation())
+            {
 
+            }
         }
 
         private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -91,6 +95,44 @@ namespace PresentationLayer.UserControls
             textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
             textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
             textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
+        }
+
+        private bool ErrorValidation ()
+        {
+            if (!long.TryParse(textBoxUserJmbg.Text, out long r))
+            {
+                error.SetError(textBoxUserJmbg, "Enter a numeric value");
+                return false;
+            }
+            else if (textBoxUserJmbg.Text == "")
+            {
+                error.SetError(textBoxUserJmbg, "Required field");
+                return false;
+            }
+            else if (textBoxUserName.Text == "")
+            {
+                error.SetError(textBoxUserName, "Required field");
+                return false;
+            }
+            else if (textBoxUserSurName.Text == "")
+            {
+                error.SetError(textBoxUserSurName, "Required field");
+                return false;
+            }
+            else if (textBoxUserPassword.Text == "")
+            {
+                error.SetError(textBoxUserPassword, "Required field");
+                return false;
+            }
+            else if (!Regex.Match(textBoxUserEmail.Text, emailRegex).Success)
+            {
+                error.SetError(textBoxUserEmail, "Wrong entry");
+                return false;
+            }
+
+
+            error.Clear();
+            return true;
         }
     }
 }

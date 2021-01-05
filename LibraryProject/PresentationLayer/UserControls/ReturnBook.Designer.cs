@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewReturn = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.textBoxReturnBookSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReturn)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridViewReturn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,17 +78,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 399);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewReturn
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(779, 302);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewReturn.AllowUserToAddRows = false;
+            this.dataGridViewReturn.AllowUserToDeleteRows = false;
+            this.dataGridViewReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReturn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewReturn.Location = new System.Drawing.Point(3, 37);
+            this.dataGridViewReturn.Name = "dataGridViewReturn";
+            this.dataGridViewReturn.ReadOnly = true;
+            this.dataGridViewReturn.Size = new System.Drawing.Size(779, 302);
+            this.dataGridViewReturn.TabIndex = 0;
+            this.dataGridViewReturn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReturn_CellClick);
             // 
             // tableLayoutPanel2
             // 
@@ -201,6 +202,7 @@
             this.buttonReturnBook.TabIndex = 8;
             this.buttonReturnBook.Text = "Return";
             this.buttonReturnBook.UseVisualStyleBackColor = true;
+            this.buttonReturnBook.Click += new System.EventHandler(this.buttonReturnBook_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -246,6 +248,7 @@
             this.textBoxReturnBookSearch.Name = "textBoxReturnBookSearch";
             this.textBoxReturnBookSearch.Size = new System.Drawing.Size(191, 20);
             this.textBoxReturnBookSearch.TabIndex = 2;
+            this.textBoxReturnBookSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxReturnBookSearch_KeyDown);
             // 
             // ReturnBook
             // 
@@ -258,7 +261,7 @@
             this.Size = new System.Drawing.Size(785, 399);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReturn)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -271,7 +274,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewReturn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
