@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Business\IBookBusiness.cs" />
+    <Compile Include="Interfaces\Business\ILogInBusiness.cs" />
+    <Compile Include="Interfaces\Business\IUserBusiness.cs" />
     <Compile Include="Interfaces\Repository\IBookRepository.cs" />
     <Compile Include="Interfaces\Repository\ILogInRepository.cs" />
     <Compile Include="Interfaces\Repository\IUserRepository.cs" />
@@ -50,8 +53,6 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\Business\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
