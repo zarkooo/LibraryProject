@@ -83,6 +83,7 @@ namespace BusinessLayer
 
         public List<Book> SortBook(List<Book> list, string sortType)
         {
+            /*
             BookSortedList bookList = new BookSortedList();
             bookList.List = list;
 
@@ -100,6 +101,8 @@ namespace BusinessLayer
 
             bookList.Sort();
             return bookList.List;
+            */
+            return new List<Book>();
         }
 
         public bool UpdataBook(Book book) => iBR.UpdataBook(book);

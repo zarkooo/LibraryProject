@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Models;
 using System.Text.RegularExpressions;
+using Common.Interfaces.Business;
 
 namespace PresentationLayer.UserControls
 {
@@ -16,11 +17,14 @@ namespace PresentationLayer.UserControls
     {
         private string emailRegex = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
 
-        public AddUser()
+        private readonly IUserBusiness userBusiness;
+
+        public AddUser(IUserBusiness userBusiness)
         {
             InitializeComponent();
             comboBoxSortBy.DataSource = Enum.GetValues(typeof(Role));
             comboBoxRole.DataSource = Enum.GetValues(typeof(Role));
+            this.userBusiness = userBusiness;
         }
 
         private User ValidationUser
@@ -81,7 +85,30 @@ namespace PresentationLayer.UserControls
         {
             if (ErrorValidation())
             {
+                if (ValidationUser == null)
+                {
+                    MessageBox.Show("Error");
+                }
+                else
+                {
+                    if (this.userBusiness.AddUser(ValidationUser) == true) 
+                    {
+                        MessageBox.Show("Radi");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Greska");
+                    }
+                }
 
+
+               /* User user = new User();
+                user.JmbgUser = textBoxUserJmbg.Text;
+                user.Name = textBoxUserName.Text;
+                user.Surname = textBoxUserSurName.Text;
+                user.Email = textBoxUserEmail.Text;
+                user.Password = textBoxUserPassword.Text;
+                user.Role = (Role)Enum.GetValues(comboBoxRole) */
             }
         }
 

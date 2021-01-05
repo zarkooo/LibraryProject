@@ -44,7 +44,7 @@ namespace PresentationLayer
 
         private void buttonUSER_Click(object sender, EventArgs e)
         {
-            AddUser addUser = new AddUser();
+            AddUser addUser = new AddUser(null);
             addUser.Dock = DockStyle.Fill;
             panel2Right.Controls.Clear();
             panel2Right.Controls.Add(addUser);
