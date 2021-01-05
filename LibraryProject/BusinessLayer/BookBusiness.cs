@@ -40,43 +40,31 @@ namespace BusinessLayer
             List<User> usersRenting = null;
             int br = 0;
 
-            foreach(var renter in GetAllBookRentedUsers())
+            foreach (var renter in GetAllBookRentedUsers())
             {
                 usersRenting = renter.Item2.ToList();
             }
 
-            bool tempino = false;
-
-            foreach(var temp in usersRenting)
+            foreach (var temp in usersRenting)
             {
                 if (temp.JmbgUser.Equals(JmbgUser))
                     br++;
-                if (br == 2)
-                {
-                    tempino = false;
-                    break;
-                }
-            }
+                if (br == 2) return false;
 
-            if (tempino == true)
+            }
+            if (iBR.RentedBook(JmbgUser, rented))
             {
-                if (iBR.RentedBook(JmbgUser, rented))
-                {
-                    return iBR.DecrementQuantity(rented);
-                }
-                return iBR.RentedBook(JmbgUser, rented);
+                return iBR.DecrementQuantity(rented);
             }
-
             return false;
         }
 
         public bool ReturnBook(string JmbgUser, Book book)
         {
-            if (iBR.ReturnBook(JmbgUser, book))
-            {
+            if (iBR.ReturnBook(JmbgUser, book) == true)
                 return iBR.IncrementQuantity(book);
-            }
-            return iBR.ReturnBook(JmbgUser, book);
+            return false;
+
         }
 
         public List<Book> SearchBook(string search_by, Book book) => iBR.SearchBook(search_by,book);
