@@ -93,11 +93,11 @@ namespace PresentationLayer.UserControls
                 {
                     if (this.userBusiness.AddUser(ValidationUser) == true) 
                     {
-                        MessageBox.Show("Radi");
+                        MessageBox.Show("Successful");
                     }
                     else
                     {
-                        MessageBox.Show("Error Greska");
+                        MessageBox.Show("Error");
                     }
                 }
 
