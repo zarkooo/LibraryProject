@@ -98,7 +98,7 @@ namespace DataAccessLayer
 
         public bool UpdataBook(Book book)
         {
-            string query = string.Format("UPDATA Books SET Title='{0}', ISBN='{1}', NameAuthor='{2}'," +
+            string query = string.Format("UPDATE Books SET Title='{0}', ISBN='{1}', NameAuthor='{2}'," +
                "YearOfIssue={3}, Quantity={4} where IdBook = {5}", book.Title, book.ISBN, book.NameAuthor, book.YearOfIssue, book.Quantity, book.IdBook);
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }

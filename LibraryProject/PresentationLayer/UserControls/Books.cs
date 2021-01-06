@@ -23,8 +23,9 @@ namespace PresentationLayer.UserControls
             InitializeComponent();
             comboBoxSortByBooks.DataSource = Enum.GetValues(typeof(Search));
             this.bookBusiness = new BookBusiness();
-            
 
+            buttonUpdateBooks.Enabled = false;
+            buttonDeleteBooks.Enabled = false;
         }
 
         private bool ErrorValidation()
@@ -118,30 +119,31 @@ namespace PresentationLayer.UserControls
         }
         private void buttonUpdateBooks_Click(object sender, EventArgs e)
         {
-            Book book = new Book();
-            int row = dataGridViewBook.SelectedRows[0].Index;
-            textBoxTitle.Text = dataGridViewBook[1, row].Value.ToString();
-            textBoxISBN.Text = dataGridViewBook[2, row].Value.ToString();
-            textBoxAuthorName.Text = dataGridViewBook[3, row].Value.ToString();
-            textBoxYearOfIssue.Text = dataGridViewBook[4, row].Value.ToString();
-            textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString();
-            book.Title = textBoxTitle.Text;
-            book.ISBN = textBoxISBN.Text;
-            book.NameAuthor = textBoxAuthorName.Text;
-            book.YearOfIssue = int.Parse(textBoxYearOfIssue.Text);
-            book.Quantity = int.Parse(textBoxQuantity.Text);
-
-            if (this.bookBusiness.UpdataBook(book) == true)
+            if(ErrorValidation())
             {
-                MessageBox.Show("successfully");
-                RefreshTable();
-                SetTextBox();
+                Book book = new Book();
+                int row = dataGridViewBook.SelectedRows[0].Index;
+                book.IdBook = Convert.ToInt32(dataGridViewBook[0, row].Value.ToString());
+                book.Title = textBoxTitle.Text;
+                book.ISBN = textBoxISBN.Text;
+                book.NameAuthor = textBoxAuthorName.Text;
+                book.YearOfIssue = int.Parse(textBoxYearOfIssue.Text);
+                book.Quantity = int.Parse(textBoxQuantity.Text);
 
 
-            }
-            else
-            {
-                MessageBox.Show("error");
+
+                if (this.bookBusiness.UpdataBook(book) == true)
+                {
+                    MessageBox.Show("successfully");
+                    RefreshTable();
+                    SetTextBox();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("error");
+                }
             }
 
         }
@@ -204,9 +206,10 @@ namespace PresentationLayer.UserControls
             textBoxISBN.Text = dataGridViewBook[2, row].Value.ToString();
             textBoxAuthorName.Text = dataGridViewBook[3, row].Value.ToString();
             textBoxYearOfIssue.Text = dataGridViewBook[4, row].Value.ToString();
-            textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString(); 
+            textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString();
 
-       
+            buttonUpdateBooks.Enabled = !false;
+            buttonDeleteBooks.Enabled = !false;
         }
         private void  RefreshTable()
         {

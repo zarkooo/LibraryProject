@@ -24,7 +24,7 @@ namespace PresentationLayer.UserControls
             InitializeComponent();
             comboBoxSortBy.DataSource = Enum.GetValues(typeof(FindBy));
             comboBoxRole.DataSource = Enum.GetValues(typeof(Role));
-          
+            
         }
 
         private User ValidationUser
@@ -53,37 +53,32 @@ namespace PresentationLayer.UserControls
 
         private void buttonUpdate_Click(object sender, EventArgs e) 
         {
-            User user = new User();
 
-            
-            int row = dataGridViewUser.SelectedRows[0].Index;
-
-            textBoxUserJmbg.Text = dataGridViewUser[0, row].Value.ToString();
-
-            textBoxUserName.Text = dataGridViewUser[1, row].Value.ToString();
-            textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
-            textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
-            textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
-
-        
-
-            user.JmbgUser = textBoxUserJmbg.Text;
-            user.Name = textBoxUserName.Text;
-            user.Surname = textBoxUserSurName.Text;
-            user.Email = textBoxUserEmail.Text;
-            user.Password = textBoxUserPassword.Text;
-
-            user.Role = (Role)Enum.Parse(typeof(Role), comboBoxRole.SelectedItem.ToString());
-           
-            
-            if (this.userBusiness.UpdataUser(user) == true)
+            if (ErrorValidation())
             {
-                MessageBox.Show("successfully");
-                ReffresTable();
-                setTextBox();
+
+                User user = new User();
+
+                user.JmbgUser = textBoxUserJmbg.Text;
+             
+                user.Name = textBoxUserName.Text;
+                user.Surname = textBoxUserSurName.Text;
+                user.Email = textBoxUserEmail.Text;
+                user.Password = textBoxUserPassword.Text;
+                user.Role = (Role)Enum.Parse(typeof(Role), comboBoxRole.SelectedItem.ToString());
+
+
+                if (this.userBusiness.UpdataUser(user) == true)
+                {
+                    MessageBox.Show("successfully");
+                    ReffresTable();
+                    setTextBox();
+                }
+                else
+                    MessageBox.Show("error");
             }
-            else
-                MessageBox.Show("error");
+
+          
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -129,16 +124,20 @@ namespace PresentationLayer.UserControls
             textBoxUserSurName.Clear();
             textBoxUserPassword.Clear();
         }
+        
         private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int row = dataGridViewUser.SelectedRows[0].Index;
+               int row = dataGridViewUser.SelectedRows[0].Index;
 
-            textBoxUserJmbg.Text = dataGridViewUser[0, row].Value.ToString();
+               textBoxUserJmbg.Text = dataGridViewUser[0, row].Value.ToString();
 
-            textBoxUserName.Text = dataGridViewUser[1, row].Value.ToString();
-            textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
-            textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
-            textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
+               textBoxUserName.Text = dataGridViewUser[1, row].Value.ToString();
+               textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
+               textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
+               textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
+       
+
+
         }
 
         private bool ErrorValidation ()
