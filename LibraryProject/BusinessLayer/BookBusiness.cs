@@ -13,9 +13,9 @@ namespace BusinessLayer
     public class BookBusiness : IBookBusiness
     {
         private readonly IBookRepository iBR;
-        public BookBusiness(IBookRepository iBR)
+        public BookBusiness()
         {
-            this.iBR = iBR;
+            this.iBR = new BookRepository();
         }
         public bool AddBook(Book book)
         {

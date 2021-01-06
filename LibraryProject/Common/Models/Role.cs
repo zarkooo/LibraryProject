@@ -8,7 +8,7 @@ namespace Common.Models
 {
     public enum Role
     {
-        LIBRARIAN, МEMBER, NONE
+        LIBRARIAN, USER, NONE
     }
 
 }

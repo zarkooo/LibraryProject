@@ -9,18 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Models;
 using System.Text.RegularExpressions;
+using BusinessLayer;
+using Common.Interfaces.Business;
 
 namespace PresentationLayer.UserControls
 {
     public partial class AddUser : UserControl
     {
         private string emailRegex = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-
+        private readonly IUserBusiness userBusiness = new UserBusiness();
+        enum FindBy { NAME,SURNAME}
         public AddUser()
         {
             InitializeComponent();
-            comboBoxSortBy.DataSource = Enum.GetValues(typeof(Role));
+            comboBoxSortBy.DataSource = Enum.GetValues(typeof(FindBy));
             comboBoxRole.DataSource = Enum.GetValues(typeof(Role));
+          
         }
 
         private User ValidationUser
@@ -51,18 +55,35 @@ namespace PresentationLayer.UserControls
         {
             User user = new User();
 
+            
             int row = dataGridViewUser.SelectedRows[0].Index;
-            user.JmbgUser = dataGridViewUser[0, row].Value.ToString();
-            user.Name = dataGridViewUser[1, row].Value.ToString();
-            user.Surname = dataGridViewUser[2, row].Value.ToString();
-            user.Email = dataGridViewUser[3, row].Value.ToString();
-            user.Password = dataGridViewUser[4, row].Value.ToString();
 
-          /*  textBoxUserJmbg.Text = user.JmbgUser;
-            textBoxUserName.Text = user.Name;
-            textBoxUserSurName.Text = user.Surname;
-            textBoxUserEmail.Text = user.Email;
-            textBoxUserPassword.Text = user.Password; */
+            textBoxUserJmbg.Text = dataGridViewUser[0, row].Value.ToString();
+
+            textBoxUserName.Text = dataGridViewUser[1, row].Value.ToString();
+            textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
+            textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
+            textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
+
+        
+
+            user.JmbgUser = textBoxUserJmbg.Text;
+            user.Name = textBoxUserName.Text;
+            user.Surname = textBoxUserSurName.Text;
+            user.Email = textBoxUserEmail.Text;
+            user.Password = textBoxUserPassword.Text;
+
+            user.Role = (Role)Enum.Parse(typeof(Role), comboBoxRole.SelectedItem.ToString());
+           
+            
+            if (this.userBusiness.UpdataUser(user) == true)
+            {
+                MessageBox.Show("successfully");
+                ReffresTable();
+                setTextBox();
+            }
+            else
+                MessageBox.Show("error");
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -75,16 +96,39 @@ namespace PresentationLayer.UserControls
             textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
             textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
             textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
+            if (this.userBusiness.DeleteUser(Jmbg) == true)
+            {
+                MessageBox.Show("successfully");
+                ReffresTable();
+                setTextBox();
+            }
+            else
+                MessageBox.Show("error");
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (ErrorValidation())
+           
+         if(ErrorValidation())
             {
-
+                if (this.userBusiness.AddUser(ValidationUser) == true)
+                {
+                    MessageBox.Show("Uspesno");
+                    setTextBox();
+                    ReffresTable();
+                }
+                else
+                    MessageBox.Show("Greska");
             }
         }
-
+        private void setTextBox()
+        {
+            textBoxUserEmail.Clear();
+            textBoxUserJmbg.Clear();
+            textBoxUserName.Clear();
+            textBoxUserSurName.Clear();
+            textBoxUserPassword.Clear();
+        }
         private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dataGridViewUser.SelectedRows[0].Index;
@@ -133,6 +177,49 @@ namespace PresentationLayer.UserControls
 
             error.Clear();
             return true;
+        }
+        private void ReffresTable()
+        {
+            //dataGridViewUser.DataSource = userBusiness.GetAllUsers().ToList();
+            dataGridViewUser.Rows.Clear();
+            List<User> list = this.userBusiness.GetAllUsers();
+            for (int i = 0; i < list.Count; ++i)
+            {
+                dataGridViewUser.Rows.Add(list[i].JmbgUser, list[i].Name,
+                    list[i].Surname, list[i].Email, list[i].Password, list[i].Role);
+            }
+           
+        }
+      
+        
+        private void AddUser_Load(object sender, EventArgs e)
+        {
+            ReffresTable();
+        }
+
+        private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            string by = comboBoxSortBy.SelectedItem.ToString();
+            List<User> listuser = null;
+            if(by== "NAME")
+            {
+                User user = new User();
+                user.Name = textBoxSearch.Text;
+                listuser = this.userBusiness.SearchUser(by, user).ToList();
+            }
+            else if(by== "SURNAME")
+            {
+                User user = new User();
+                user.Surname = textBoxSearch.Text;
+                listuser = this.userBusiness.SearchUser(by, user).ToList();
+            }
+            dataGridViewUser.Rows.Clear();
+            
+            for (int i = 0; i < listuser.Count; ++i)
+            {
+                dataGridViewUser.Rows.Add(listuser[i].JmbgUser, listuser[i].Name,
+                    listuser[i].Surname, listuser[i].Email, listuser[i].Password, listuser[i].Role);
+            }
         }
     }
 }

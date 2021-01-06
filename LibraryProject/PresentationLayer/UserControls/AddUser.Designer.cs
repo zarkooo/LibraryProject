@@ -62,6 +62,12 @@
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.JMBG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -434,6 +440,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(298, 20);
             this.textBoxSearch.TabIndex = 0;
+            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             // 
             // labelSearch
             // 
@@ -450,6 +457,13 @@
             this.dataGridViewUser.AllowUserToAddRows = false;
             this.dataGridViewUser.AllowUserToDeleteRows = false;
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.JMBG,
+            this.Name,
+            this.Surname,
+            this.Email,
+            this.Password,
+            this.Role});
             this.dataGridViewUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewUser.Location = new System.Drawing.Point(3, 54);
             this.dataGridViewUser.Name = "dataGridViewUser";
@@ -462,6 +476,48 @@
             // 
             this.error.ContainerControl = this;
             // 
+            // JMBG
+            // 
+            this.JMBG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.JMBG.HeaderText = "JMBG";
+            this.JMBG.Name = "JMBG";
+            this.JMBG.ReadOnly = true;
+            // 
+            // Name
+            // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Surname
+            // 
+            this.Surname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Surname.HeaderText = "Surname";
+            this.Surname.Name = "Surname";
+            this.Surname.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Role.HeaderText = "Role";
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,8 +525,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "AddUser";
+           // this.Name = "AddUser";
             this.Size = new System.Drawing.Size(829, 400);
+            this.Load += new System.EventHandler(this.AddUser_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -533,5 +590,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JMBG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
     }
 }

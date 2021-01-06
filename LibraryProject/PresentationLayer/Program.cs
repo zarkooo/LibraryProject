@@ -1,6 +1,6 @@
 ﻿using Common.Interfaces.Repository;
 using DataAccessLayer;
-using Microsoft.Extensions.DependencyInjection;
+
 using PresentationLayer.CommonForms;
 using System;
 using System.Collections.Generic;
@@ -23,11 +23,11 @@ namespace PresentationLayer
             Application.Run(new LogIn());
         }
 
-        private static void ConfigureServices(ServiceCollection services)
+     /*   private static void ConfigureServices(ServiceCollection services)
         {
             services.AddSingleton<IBookRepository, BookRepository>();
             services.AddSingleton<ILogInRepository, LogInRepository>();
             services.AddSingleton<IUserRepository, UserRepository>();
-        }
+        }*/
     }
 }

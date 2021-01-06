@@ -14,9 +14,9 @@ namespace BusinessLayer
     {
         private readonly IUserRepository iUR;
 
-        public UserBusiness(IUserRepository iUR)
+        public UserBusiness()
         {
-            this.iUR = iUR;
+            this.iUR = new UserRepository();
         }
         public bool AddUser(User user)
         {

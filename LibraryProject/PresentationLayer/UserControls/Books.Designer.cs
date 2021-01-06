@@ -58,6 +58,12 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxSortByBooks = new System.Windows.Forms.ComboBox();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IdBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.YearOfIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -319,6 +325,13 @@
             this.dataGridViewBook.AllowUserToAddRows = false;
             this.dataGridViewBook.AllowUserToDeleteRows = false;
             this.dataGridViewBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdBook,
+            this.Title,
+            this.ISBN,
+            this.Author,
+            this.YearOfIssue,
+            this.Quantity});
             this.dataGridViewBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewBook.Location = new System.Drawing.Point(3, 53);
             this.dataGridViewBook.Name = "dataGridViewBook";
@@ -412,6 +425,48 @@
             // 
             this.error.ContainerControl = this;
             // 
+            // IdBook
+            // 
+            this.IdBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IdBook.HeaderText = "IdBook";
+            this.IdBook.Name = "IdBook";
+            this.IdBook.ReadOnly = true;
+            // 
+            // Title
+            // 
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            // 
+            // ISBN
+            // 
+            this.ISBN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ISBN.HeaderText = "ISBN";
+            this.ISBN.Name = "ISBN";
+            this.ISBN.ReadOnly = true;
+            // 
+            // Author
+            // 
+            this.Author.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Author.HeaderText = "Author";
+            this.Author.Name = "Author";
+            this.Author.ReadOnly = true;
+            // 
+            // YearOfIssue
+            // 
+            this.YearOfIssue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.YearOfIssue.HeaderText = "YearOfIssue";
+            this.YearOfIssue.Name = "YearOfIssue";
+            this.YearOfIssue.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +476,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Books";
             this.Size = new System.Drawing.Size(770, 398);
+            this.Load += new System.EventHandler(this.Books_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -474,5 +530,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ComboBox comboBoxSortByBooks;
         private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ISBN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn YearOfIssue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }
 }
