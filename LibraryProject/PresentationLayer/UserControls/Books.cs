@@ -8,16 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Models;
+using Common.Interfaces.Business;
+using BusinessLayer;
 
 namespace PresentationLayer.UserControls
 {
     public partial class Books : UserControl
     {
+      
         enum Search { TITLE, AUTHOR }
+        private readonly IBookBusiness bookBusiness;
         public Books()
         {
             InitializeComponent();
             comboBoxSortByBooks.DataSource = Enum.GetValues(typeof(Search));
+            this.bookBusiness = new BookBusiness();
+            
+
         }
 
         private bool ErrorValidation()
@@ -86,28 +93,57 @@ namespace PresentationLayer.UserControls
         {
             if (ErrorValidation())
             {
+                if (this.bookBusiness.AddBook(ValidationBook) == true)
+                {
+                    MessageBox.Show("successfully");
+                    RefreshTable();
+                    SetTextBox();
 
+
+                }
+                else
+                {
+                    MessageBox.Show("error");
+                }
             }
         }
-
+        private void SetTextBox()
+        {
+            textBoxAuthorName.Text = "";
+            textBoxAuthorName.Text = "";
+            textBoxQuantity.Text = "";
+            textBoxTitle.Text = "";
+            textBoxISBN.Text = "";
+            textBoxYearOfIssue.Text = "";
+        }
         private void buttonUpdateBooks_Click(object sender, EventArgs e)
         {
             Book book = new Book();
             int row = dataGridViewBook.SelectedRows[0].Index;
-            book.Title = dataGridViewBook[1, row].Value.ToString();
-            book.ISBN = dataGridViewBook[2, row].Value.ToString();
-            book.NameAuthor = dataGridViewBook[3, row].Value.ToString();
-            book.YearOfIssue = int.Parse(dataGridViewBook[4, row].Value.ToString());
-            book.Quantity = int.Parse(dataGridViewBook[5, row].Value.ToString());
+            textBoxTitle.Text = dataGridViewBook[1, row].Value.ToString();
+            textBoxISBN.Text = dataGridViewBook[2, row].Value.ToString();
+            textBoxAuthorName.Text = dataGridViewBook[3, row].Value.ToString();
+            textBoxYearOfIssue.Text = dataGridViewBook[4, row].Value.ToString();
+            textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString();
+            book.Title = textBoxTitle.Text;
+            book.ISBN = textBoxISBN.Text;
+            book.NameAuthor = textBoxAuthorName.Text;
+            book.YearOfIssue = int.Parse(textBoxYearOfIssue.Text);
+            book.Quantity = int.Parse(textBoxQuantity.Text);
 
-         /*   textBoxTitle.Text = book.Title;
-            textBoxISBN.Text = book.ISBN;
-            textBoxAuthorName.Text = book.NameAuthor;
-            int yearConvert = Convert.ToInt32(textBoxYearOfIssue.Text);
-            yearConvert = book.YearOfIssue;
+            if (this.bookBusiness.UpdataBook(book) == true)
+            {
+                MessageBox.Show("successfully");
+                RefreshTable();
+                SetTextBox();
 
-            int quantityConvert = Convert.ToInt32(textBoxQuantity.Text);
-            quantityConvert = book.Quantity; */
+
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+
         }
 
         private void buttonDeleteBooks_Click(object sender, EventArgs e)
@@ -115,21 +151,49 @@ namespace PresentationLayer.UserControls
             int row = dataGridViewBook.SelectedRows[0].Index;
             int IdBook = Convert.ToInt32(dataGridViewBook[0, row].Value.ToString());
 
-            /* textBoxTitle.Text = dataGridViewBook[1, row].Value.ToString();
+            textBoxTitle.Text = dataGridViewBook[1, row].Value.ToString();
             textBoxISBN.Text = dataGridViewBook[2, row].Value.ToString();
             textBoxAuthorName.Text = dataGridViewBook[3, row].Value.ToString();
-            int yearConvert = Convert.ToInt32(textBoxYearOfIssue.Text);
-            int yearConvert2 = Convert.ToInt32(dataGridViewBook[4, row].Value.ToString());
-            yearConvert = yearConvert2;
-            int quantityConvert = Convert.ToInt32(textBoxQuantity.Text);
-            int quantityConvert2 = Convert.ToInt32(textBoxQuantity.Text);
-            quantityConvert = quantityConvert2; */
-            
+            textBoxYearOfIssue.Text = dataGridViewBook[4, row].Value.ToString();
+            textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString();
+
+            if (this.bookBusiness.DeleteBook(IdBook) == true)
+            {
+                MessageBox.Show("successfully");
+                RefreshTable();
+                SetTextBox();
+
+
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+
+
         }
 
         private void textBoxSearchBooks_KeyDown(object sender, KeyEventArgs e)
         {
-
+            Book book = new Book();
+            List<Book> listbook = null;
+            string by = comboBoxSortByBooks.SelectedItem.ToString();
+            if (by == "TITLE")
+            {
+                book.Title = textBoxSearchBooks.Text;
+            listbook = this.bookBusiness.SearchBook(by, book);
+            }
+            else
+            {
+                book.NameAuthor = textBoxSearchBooks.Text;
+                listbook = this.bookBusiness.SearchBook(by, book);
+            }
+            dataGridViewBook.Rows.Clear();
+            for (int i = 0; i < listbook.Count; ++i)
+            {
+                dataGridViewBook.Rows.Add(listbook[i].IdBook,listbook[i].Title,
+                    listbook[i].ISBN, listbook[i].NameAuthor, listbook[i].YearOfIssue, listbook[i].Quantity);
+            }
         }
 
         private void dataGridViewBook_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -139,14 +203,28 @@ namespace PresentationLayer.UserControls
             textBoxTitle.Text = dataGridViewBook[1, row].Value.ToString();
             textBoxISBN.Text = dataGridViewBook[2, row].Value.ToString();
             textBoxAuthorName.Text = dataGridViewBook[3, row].Value.ToString();
+            textBoxYearOfIssue.Text = dataGridViewBook[4, row].Value.ToString();
+            textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString(); 
 
-
-            int yearConvert = Convert.ToInt32(textBoxYearOfIssue.Text);
-            int yearConvert2 = Convert.ToInt32(dataGridViewBook[4, row].Value.ToString());
-            yearConvert = yearConvert2;
-            int quantityConvert = Convert.ToInt32(textBoxQuantity.Text);
-            int quantityConvert2 = Convert.ToInt32(textBoxQuantity.Text);
-            quantityConvert = quantityConvert2;
+       
+        }
+        private void  RefreshTable()
+        {
+            //  dataGridViewBook.AutoGenerateColumns = false;
+            //   dataGridViewBook.DataSource = this.bookBusiness.GetAllBooks().ToList();
+            // dataGridViewBook.Columns[0].Visible = false;
+            dataGridViewBook.Rows.Clear();
+            List<Book> list = this.bookBusiness.GetAllBooks();
+            for (int i = 0; i < list.Count; ++i)
+            {
+                dataGridViewBook.Rows.Add(list[i].IdBook,list[i].Title,
+                    list[i].ISBN, list[i].NameAuthor, list[i].YearOfIssue, list[i].Quantity);
+            }
+            dataGridViewBook.Columns[0].Visible = false;
+        }
+        private void Books_Load(object sender, EventArgs e)
+        {
+            RefreshTable();
         }
     }
 }

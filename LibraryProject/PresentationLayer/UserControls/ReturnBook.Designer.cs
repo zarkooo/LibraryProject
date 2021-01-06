@@ -42,9 +42,18 @@
             this.textBoxReturnBookTitle = new System.Windows.Forms.TextBox();
             this.buttonReturnBook = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxReturnBookSortBy = new System.Windows.Forms.ComboBox();
+            this.comboBoxReturnUsertBy = new System.Windows.Forms.ComboBox();
             this.labelSearchReturn = new System.Windows.Forms.Label();
-            this.textBoxReturnBookSearch = new System.Windows.Forms.TextBox();
+            this.textBoxReturnUserSearch = new System.Windows.Forms.TextBox();
+            this.JMBGUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateOfIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReturn)).BeginInit();
@@ -83,6 +92,16 @@
             this.dataGridViewReturn.AllowUserToAddRows = false;
             this.dataGridViewReturn.AllowUserToDeleteRows = false;
             this.dataGridViewReturn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReturn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.JMBGUser,
+            this.Name,
+            this.Surname,
+            this.IdBook,
+            this.Title,
+            this.Quantity,
+            this.NameAuthor,
+            this.DateOfIssue,
+            this.ReturnDate});
             this.dataGridViewReturn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewReturn.Location = new System.Drawing.Point(3, 37);
             this.dataGridViewReturn.Name = "dataGridViewReturn";
@@ -211,9 +230,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxReturnBookSortBy, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxReturnUsertBy, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelSearchReturn, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxReturnBookSearch, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxReturnUserSearch, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -222,14 +241,14 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(779, 28);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // comboBoxReturnBookSortBy
+            // comboBoxReturnUsertBy
             // 
-            this.comboBoxReturnBookSortBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxReturnBookSortBy.FormattingEnabled = true;
-            this.comboBoxReturnBookSortBy.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxReturnBookSortBy.Name = "comboBoxReturnBookSortBy";
-            this.comboBoxReturnBookSortBy.Size = new System.Drawing.Size(110, 21);
-            this.comboBoxReturnBookSortBy.TabIndex = 0;
+            this.comboBoxReturnUsertBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxReturnUsertBy.FormattingEnabled = true;
+            this.comboBoxReturnUsertBy.Location = new System.Drawing.Point(3, 3);
+            this.comboBoxReturnUsertBy.Name = "comboBoxReturnUsertBy";
+            this.comboBoxReturnUsertBy.Size = new System.Drawing.Size(110, 21);
+            this.comboBoxReturnUsertBy.TabIndex = 0;
             // 
             // labelSearchReturn
             // 
@@ -241,14 +260,77 @@
             this.labelSearchReturn.TabIndex = 1;
             this.labelSearchReturn.Text = "Search:";
             // 
-            // textBoxReturnBookSearch
+            // textBoxReturnUserSearch
             // 
-            this.textBoxReturnBookSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxReturnBookSearch.Location = new System.Drawing.Point(585, 4);
-            this.textBoxReturnBookSearch.Name = "textBoxReturnBookSearch";
-            this.textBoxReturnBookSearch.Size = new System.Drawing.Size(191, 20);
-            this.textBoxReturnBookSearch.TabIndex = 2;
-            this.textBoxReturnBookSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxReturnBookSearch_KeyDown);
+            this.textBoxReturnUserSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxReturnUserSearch.Location = new System.Drawing.Point(585, 4);
+            this.textBoxReturnUserSearch.Name = "textBoxReturnUserSearch";
+            this.textBoxReturnUserSearch.Size = new System.Drawing.Size(191, 20);
+            this.textBoxReturnUserSearch.TabIndex = 2;
+            this.textBoxReturnUserSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxReturnUserSearch_KeyDown);
+            // 
+            // JMBGUser
+            // 
+            this.JMBGUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.JMBGUser.HeaderText = "JMBGUser";
+            this.JMBGUser.Name = "JMBGUser";
+            this.JMBGUser.ReadOnly = true;
+            // 
+            // Name
+            // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Surname
+            // 
+            this.Surname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Surname.HeaderText = "Surname";
+            this.Surname.Name = "Surname";
+            this.Surname.ReadOnly = true;
+            // 
+            // IdBook
+            // 
+            this.IdBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IdBook.HeaderText = "IdBook";
+            this.IdBook.Name = "IdBook";
+            this.IdBook.ReadOnly = true;
+            // 
+            // Title
+            // 
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // NameAuthor
+            // 
+            this.NameAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameAuthor.HeaderText = "NameAuthor";
+            this.NameAuthor.Name = "NameAuthor";
+            this.NameAuthor.ReadOnly = true;
+            // 
+            // DateOfIssue
+            // 
+            this.DateOfIssue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateOfIssue.HeaderText = "DateOfIssue";
+            this.DateOfIssue.Name = "DateOfIssue";
+            this.DateOfIssue.ReadOnly = true;
+            // 
+            // ReturnDate
+            // 
+            this.ReturnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ReturnDate.HeaderText = "ReturnDate";
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.ReadOnly = true;
             // 
             // ReturnBook
             // 
@@ -257,8 +339,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.panel1);
-            this.Name = "ReturnBook";
+            ///this.Name = "ReturnBook";
             this.Size = new System.Drawing.Size(785, 399);
+            this.Load += new System.EventHandler(this.ReturnBook_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReturn)).EndInit();
@@ -286,8 +369,17 @@
         private System.Windows.Forms.TextBox textBoxReturnBookTitle;
         private System.Windows.Forms.Button buttonReturnBook;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.ComboBox comboBoxReturnBookSortBy;
+        private System.Windows.Forms.ComboBox comboBoxReturnUsertBy;
         private System.Windows.Forms.Label labelSearchReturn;
-        private System.Windows.Forms.TextBox textBoxReturnBookSearch;
+        private System.Windows.Forms.TextBox textBoxReturnUserSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JMBGUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateOfIssue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReturnDate;
     }
 }

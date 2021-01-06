@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using Common.Interfaces.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,40 +9,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common.Models;
 
 namespace PresentationLayer.CommonForms
 {
     public partial class LogIn : Form
     {
+        private readonly ILogInBusiness logInBusiness;
         public LogIn()
         {
             InitializeComponent();
+            this.logInBusiness = new LogInBusiness();
         }
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             if (ErrorValidation())
             {
+                User user = new User();
+                user.JmbgUser = textBoxLogInJmbg.Text;
+                user.Password = textBoxLogInPassword.Text;
 
+                Role role = this.logInBusiness.LogIn(user);
 
-            if (textBoxLogInPassword.Text == "1")
-            {
-                Member member = new Member("Jack");
-                
-                member.ShowDialog();
-                
-            }
-            else
-            {
-                Library library = new Library();
-                
-                library.ShowDialog();
-                
-            }
+                if (role.Equals(Role.LIBRARIAN))
+                {
+                    ClearTextBox();
+                    Library library = new Library();
+                    library.ShowDialog();
+                }
+                else if (role.Equals(Role.USER))
+                {
+                    
+                    Member member = new Member(this.logInBusiness.GetNameUser(textBoxLogInJmbg.Text));
+                    ClearTextBox();
+                    member.ShowDialog();
+                }
+                else if (role.Equals(Role.NONE))
+                {
+                    ClearTextBox();
+                    MessageBox.Show("Wrong entry");
+                }
+           
 
             }
         }
-
+        private void ClearTextBox()
+        {
+            textBoxLogInJmbg.Text = "";
+            textBoxLogInPassword.Text = "";
+        }
         private bool ErrorValidation()
         {
             if (!long.TryParse(textBoxLogInJmbg.Text, out long r))

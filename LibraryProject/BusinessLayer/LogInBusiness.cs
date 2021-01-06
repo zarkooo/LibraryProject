@@ -13,9 +13,9 @@ namespace BusinessLayer
     public class LogInBusiness : ILogInBusiness
     {
         private readonly ILogInRepository iLR;
-        public LogInBusiness(ILogInRepository iLR)
+        public LogInBusiness()
         {
-            this.iLR = iLR;
+            this.iLR = new LogInRepository();
         }
         public string GetNameUser(string jmbg)
         {
