@@ -25,7 +25,7 @@ namespace DataAccessLayer
         }
         public bool UpdataUser(User user)
         {
-            string query = string.Format("UPDATA Users SET  Name='{0}', Surname='{1}', Email='{2}', Password='{3}', Role='{4}' WHERE JMBGUser='{5}'",
+            string query = string.Format("UPDATE Users SET  Name='{0}', Surname='{1}', Email='{2}', Password='{3}', Role='{4}' WHERE JMBGUser='{5}'",
                 user.Name, user.Surname, user.Email, user.Password, user.Role, user.JmbgUser);
             return BaseConnection.ExecuteNonQuerySqlCommand(query);
         }
