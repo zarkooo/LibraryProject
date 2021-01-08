@@ -162,6 +162,7 @@
             this.buttonSort.Size = new System.Drawing.Size(76, 31);
             this.buttonSort.TabIndex = 4;
             this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
             // 
             // tableLayoutPanel3
             // 

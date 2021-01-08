@@ -125,7 +125,14 @@ namespace PresentationLayer.UserControls
 
                 lisuser = userBusiness.SearchUser(by, user).ToList();
             }
-            ReffresTable();
+            this.dataGridViewReturn.Rows.Clear();
+            for (int i = 0; i < lisuser.Count && i < listrented.Count; i++)
+            {
+                dataGridViewReturn.Rows.Add(lisuser[i].JmbgUser, lisuser[i].Name,
+                    lisuser[i].Surname, listrented[i].IdBook, listrented[i].Title,
+                    listrented[i].NameAuthor, listrented[i].Quantity, listrented[i].DateOfIssue,
+                    listrented[i].ReturnDate);
+            }
         }
     }
 }
