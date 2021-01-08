@@ -85,5 +85,17 @@ namespace PresentationLayer.CommonForms
             LoadTable();
 
         }
+
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            List<Book> list = this.bookBusiness.GetAllBooks();
+            this.bookBusiness.SortBook(list, "Title");
+            dataGridViewBook.Rows.Clear();
+            for (int i = 0; i < list.Count; ++i)
+            {
+                dataGridViewBook.Rows.Add(list[i].Title,
+                    list[i].ISBN, list[i].NameAuthor, list[i].YearOfIssue, list[i].Quantity);
+            }
+        }
     }
 }
