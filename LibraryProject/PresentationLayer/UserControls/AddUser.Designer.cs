@@ -61,13 +61,13 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.JMBG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -292,10 +292,10 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
+            this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonAdd.Location = new System.Drawing.Point(35, 3);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(107, 21);
+            this.buttonAdd.Size = new System.Drawing.Size(75, 21);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -303,10 +303,10 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUpdate.Location = new System.Drawing.Point(3, 30);
+            this.buttonUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonUpdate.Location = new System.Drawing.Point(35, 30);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(107, 22);
+            this.buttonUpdate.Size = new System.Drawing.Size(75, 22);
             this.buttonUpdate.TabIndex = 1;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -472,10 +472,6 @@
             this.dataGridViewUser.TabIndex = 1;
             this.dataGridViewUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellClick);
             // 
-            // error
-            // 
-            this.error.ContainerControl = this;
-            // 
             // JMBG
             // 
             this.JMBG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -517,6 +513,10 @@
             this.Role.HeaderText = "Role";
             this.Role.Name = "Role";
             this.Role.ReadOnly = true;
+            // 
+            // error
+            // 
+            this.error.ContainerControl = this;
             // 
             // AddUser
             // 

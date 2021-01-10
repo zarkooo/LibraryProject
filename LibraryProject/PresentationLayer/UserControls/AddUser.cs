@@ -24,6 +24,9 @@ namespace PresentationLayer.UserControls
             InitializeComponent();
             comboBoxSortBy.DataSource = Enum.GetValues(typeof(FindBy));
             comboBoxRole.DataSource = Enum.GetValues(typeof(Role));
+
+            buttonUpdate.Enabled = false;
+            buttonDelete.Enabled = false;
             
         }
 
@@ -135,8 +138,9 @@ namespace PresentationLayer.UserControls
                textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
                textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
                textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
-       
 
+            buttonDelete.Enabled = true;
+            buttonUpdate.Enabled = true;
 
         }
 
