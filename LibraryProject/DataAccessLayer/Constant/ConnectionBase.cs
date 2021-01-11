@@ -8,6 +8,6 @@ namespace DataAccessLayer.Constant
 {
    public  class ConnectionBase
     {
-        public static string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BaseLibrary;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=libraryProject;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
     }
 }
