@@ -78,7 +78,7 @@ namespace PresentationLayer.UserControls
                     setTextBox();
                 }
                 else
-                    MessageBox.Show("error");
+                    MessageBox.Show("Error");
             }
 
           
@@ -101,7 +101,7 @@ namespace PresentationLayer.UserControls
                 setTextBox();
             }
             else
-                MessageBox.Show("error");
+                MessageBox.Show("Error");
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace PresentationLayer.UserControls
                     ReffresTable();
                 }
                 else
-                    MessageBox.Show("eror");
+                    MessageBox.Show("Error");
             }
         }
         private void setTextBox()
