@@ -147,7 +147,7 @@ namespace PresentationLayer.UserControls
             }
 
         }
-
+        public int TestRowCount => dataGridViewBook.Rows.Count;
         private void buttonDeleteBooks_Click(object sender, EventArgs e)
         {
             int row = dataGridViewBook.SelectedRows[0].Index;
@@ -211,7 +211,7 @@ namespace PresentationLayer.UserControls
             buttonUpdateBooks.Enabled = !false;
             buttonDeleteBooks.Enabled = !false;
         }
-        private void  RefreshTable()
+        public void  RefreshTable()
         {
             //  dataGridViewBook.AutoGenerateColumns = false;
             //   dataGridViewBook.DataSource = this.bookBusiness.GetAllBooks().ToList();

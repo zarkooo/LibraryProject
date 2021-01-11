@@ -580,7 +580,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerReturnBooks;
         private System.Windows.Forms.Button buttonIssue;
         private System.Windows.Forms.DataGridViewTextBoxColumn JMBG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
