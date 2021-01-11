@@ -84,11 +84,15 @@ namespace PresentationLayer.UserControls
 
         private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int row = dataGridViewUser.SelectedRows[0].Index;
+            try
+            {
+                int row = dataGridViewUser.SelectedRows[0].Index;
 
-            textBoxJmbgUser.Text = dataGridViewUser[0, row].Value.ToString();
-            textBoxNameUser.Text = dataGridViewUser[1, row].Value.ToString();
-            textBoxSurnameUser.Text = dataGridViewUser[2, row].Value.ToString();
+                textBoxJmbgUser.Text = dataGridViewUser[0, row].Value.ToString();
+                textBoxNameUser.Text = dataGridViewUser[1, row].Value.ToString();
+                textBoxSurnameUser.Text = dataGridViewUser[2, row].Value.ToString();
+            }
+            catch { MessageBox.Show("You must select a row, not a column!"); }
 
             textBoxJmbgUser.Enabled = !false;
             textBoxSurnameUser.Enabled = !false;
@@ -98,8 +102,12 @@ namespace PresentationLayer.UserControls
         private void dataGridViewBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             buttonIssue.Enabled = true;
-            int row = dataGridViewBooks.SelectedRows[0].Index;
-            textBoxTitleBooks.Text = dataGridViewBooks[1, row].Value.ToString();
+            try
+            {
+                int row = dataGridViewBooks.SelectedRows[0].Index;
+                textBoxTitleBooks.Text = dataGridViewBooks[1, row].Value.ToString();
+            }
+            catch { MessageBox.Show("You must select a row, not a column!"); }
            
             textBoxTitleBooks.Enabled = !false;
 

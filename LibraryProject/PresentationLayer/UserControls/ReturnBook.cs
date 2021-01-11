@@ -30,15 +30,19 @@ namespace PresentationLayer.UserControls
        
         private void dataGridViewReturn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int row = dataGridViewReturn.SelectedRows[0].Index;
+            try
+            {
+                int row = dataGridViewReturn.SelectedRows[0].Index;
 
-          
+                textBoxReturnBookJmbg.Text = dataGridViewReturn[0, row].Value.ToString();
+                textBoxReturnBookName.Text = dataGridViewReturn[1, row].Value.ToString();
+                textBoxReturnBookSurname.Text = dataGridViewReturn[2, row].Value.ToString();
 
-            textBoxReturnBookJmbg.Text = dataGridViewReturn[0, row].Value.ToString();
-            textBoxReturnBookName.Text = dataGridViewReturn[1, row].Value.ToString();
-            textBoxReturnBookSurname.Text = dataGridViewReturn[2, row].Value.ToString();
+                textBoxReturnBookTitle.Text = dataGridViewReturn[4, row].Value.ToString();
+            }
+            catch { MessageBox.Show("You must select a row, not a column!"); }
 
-            textBoxReturnBookTitle.Text = dataGridViewReturn[4, row].Value.ToString();
+            
             buttonReturnBook.Enabled = true;
             textBoxReturnBookJmbg.Enabled = !false;
             textBoxReturnBookName.Enabled = !false;

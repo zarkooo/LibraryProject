@@ -200,17 +200,22 @@ namespace PresentationLayer.UserControls
 
         private void dataGridViewBook_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int row = dataGridViewBook.SelectedRows[0].Index;
+            try
+            {
+                int row = dataGridViewBook.SelectedRows[0].Index;
 
-            textBoxTitle.Text = dataGridViewBook[1, row].Value.ToString();
-            textBoxISBN.Text = dataGridViewBook[2, row].Value.ToString();
-            textBoxAuthorName.Text = dataGridViewBook[3, row].Value.ToString();
-            textBoxYearOfIssue.Text = dataGridViewBook[4, row].Value.ToString();
-            textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString();
+                textBoxTitle.Text = dataGridViewBook[1, row].Value.ToString();
+                textBoxISBN.Text = dataGridViewBook[2, row].Value.ToString();
+                textBoxAuthorName.Text = dataGridViewBook[3, row].Value.ToString();
+                textBoxYearOfIssue.Text = dataGridViewBook[4, row].Value.ToString();
+                textBoxQuantity.Text = dataGridViewBook[5, row].Value.ToString();
+            }
+            catch { MessageBox.Show("You must select a row, not a column!"); }
 
             buttonUpdateBooks.Enabled = !false;
             buttonDeleteBooks.Enabled = !false;
         }
+
         public void  RefreshTable()
         {
             //  dataGridViewBook.AutoGenerateColumns = false;
