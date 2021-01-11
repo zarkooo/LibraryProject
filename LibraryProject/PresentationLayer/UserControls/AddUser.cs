@@ -111,12 +111,12 @@ namespace PresentationLayer.UserControls
             {
                 if (this.userBusiness.AddUser(ValidationUser) == true)
                 {
-                    MessageBox.Show("Uspesno");
+                    MessageBox.Show("successfully");
                     setTextBox();
                     ReffresTable();
                 }
                 else
-                    MessageBox.Show("Greska");
+                    MessageBox.Show("eror");
             }
         }
         private void setTextBox()
@@ -130,14 +130,18 @@ namespace PresentationLayer.UserControls
         
         private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-               int row = dataGridViewUser.SelectedRows[0].Index;
+            try
+            {
+                int row = dataGridViewUser.SelectedRows[0].Index;
 
-               textBoxUserJmbg.Text = dataGridViewUser[0, row].Value.ToString();
+                textBoxUserJmbg.Text = dataGridViewUser[0, row].Value.ToString();
 
-               textBoxUserName.Text = dataGridViewUser[1, row].Value.ToString();
-               textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
-               textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
-               textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
+                textBoxUserName.Text = dataGridViewUser[1, row].Value.ToString();
+                textBoxUserSurName.Text = dataGridViewUser[2, row].Value.ToString();
+                textBoxUserEmail.Text = dataGridViewUser[3, row].Value.ToString();
+                textBoxUserPassword.Text = dataGridViewUser[4, row].Value.ToString();
+            }
+            catch { MessageBox.Show("You must select a row, not a column!"); }
 
             buttonDelete.Enabled = true;
             buttonUpdate.Enabled = true;
