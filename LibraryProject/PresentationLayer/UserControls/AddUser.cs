@@ -143,7 +143,7 @@ namespace PresentationLayer.UserControls
             buttonUpdate.Enabled = true;
 
         }
-
+        public int TestRowCount => dataGridViewUser.Rows.Count;
         private bool ErrorValidation ()
         {
             if (!long.TryParse(textBoxUserJmbg.Text, out long r))
@@ -181,7 +181,7 @@ namespace PresentationLayer.UserControls
             error.Clear();
             return true;
         }
-        private void ReffresTable()
+        public void ReffresTable()
         {
             //dataGridViewUser.DataSource = userBusiness.GetAllUsers().ToList();
             dataGridViewUser.Rows.Clear();

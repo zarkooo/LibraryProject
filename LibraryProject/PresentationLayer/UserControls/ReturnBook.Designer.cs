@@ -373,7 +373,7 @@
         private System.Windows.Forms.Label labelSearchReturn;
         private System.Windows.Forms.TextBox textBoxReturnUserSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn JMBGUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
