@@ -1,0 +1,31 @@
+CREATE TABLE [dbo].[Books] (
+    [IdBook]      INT            IDENTITY (1, 1) NOT NULL,
+    [Title]       NVARCHAR (100) NOT NULL,
+    [ISBN]        NVARCHAR (100) NOT NULL,
+    [NameAuthor]  NVARCHAR (100) NOT NULL,
+    [YearOfIssue] INT            NULL,
+    [Quantity]    INT            NOT NULL,
+    CONSTRAINT [Books_pk] PRIMARY KEY CLUSTERED ([IdBook] ASC)
+);
+
+CREATE TABLE [dbo].[Users] (
+    [JMBGUser] NVARCHAR (13) NOT NULL,
+    [Name]     NVARCHAR (50) NOT NULL,
+    [Surname]  NVARCHAR (50) NOT NULL,
+    [Email]    NVARCHAR (50) NULL,
+    [Password] NVARCHAR (50) NOT NULL,
+    [Role]     NVARCHAR (50) NOT NULL,
+    CONSTRAINT [Users_pk] PRIMARY KEY CLUSTERED ([JMBGUser] ASC)
+);
+
+CREATE TABLE [dbo].[Rented] (
+    [IdRent]      INT           IDENTITY (1, 1) NOT NULL,
+    [JMBGUser]    NVARCHAR (13) NOT NULL,
+    [IdBook]      INT           NOT NULL,
+    [DateOfIssue] DATE          NOT NULL,
+    [ReturnDate]  DATE          NOT NULL,
+    CONSTRAINT [Rented_pk] PRIMARY KEY CLUSTERED ([IdRent] ASC),
+    CONSTRAINT [Rented_Users_fk] FOREIGN KEY ([JMBGUser]) REFERENCES [dbo].[Users] ([JMBGUser]),
+    CONSTRAINT [Rented_Books_fk] FOREIGN KEY ([IdBook]) REFERENCES [dbo].[Books] ([IdBook])
+);
+
